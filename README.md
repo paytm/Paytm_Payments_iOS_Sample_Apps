@@ -40,7 +40,7 @@ http://paywithpaytm.com/developer/paytm_api_doc?target=txn-status-api
 
 # Steps to configure via PODS
 1. Pod init in the project Directory. It will create a Podfile.
-2. Add source 'https://github.com/Paytm-Payments/Paytm_iOS_App_Kit.git' at the top of the podfile
+2. Add source 'https://github.com/Paytm-Payments/Paytm_iOS_App_Kit.git' source 'https://github.com/CocoaPods/Specs.git' at the top of the podfile
 3. Add pod 'Paytm-Payments' in the pod file.
 4. Save and run pod install in the terminal
 5. Open xcorkspace
