@@ -27,7 +27,7 @@
 		#### //Order configuration in the order object
 		#### orderDict[@"TXN_AMOUNT"] = @"1";
 		#### orderDict[@"ORDER_ID"] = [ViewController generateOrderIDWithPrefix:@""];
-		#### orderDict[@"CALLBACK_URL"] = @"https://securegw.paytm.in/theia/paytmCallback";
+		#### orderDict[@"CALLBACK_URL"] = @"https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=<ORDER_ID>";
 		#### orderDict[@"CHECKSUMHASH"] = @"w2QDRMgp1234567JEAPCIOmNgQvsi+BhpqijfM9KvFfRiPmGSt3Ddzw+oTaGCLneJwxFFq5mqTMwJXdQE2EzK4px2xruDqKZjHupz9yXev4=";
 		#### orderDict[@"REQUEST_TYPE"] = @"DEFAULT";
 		#### orderDict[@"CUST_ID"] = @"1234567890";
