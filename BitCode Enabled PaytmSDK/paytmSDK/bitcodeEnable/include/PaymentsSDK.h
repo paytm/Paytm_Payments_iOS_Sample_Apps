@@ -14,7 +14,7 @@
 #import "PGServerEnvironment.h"
 #import "PGOrder.h"
 
-#define PGSDK_VERSION   @"2.8"
+#define PGSDK_VERSION   @"2.7"
 
 #ifdef DEBUG
 #define DEBUGLOG    NSLog
