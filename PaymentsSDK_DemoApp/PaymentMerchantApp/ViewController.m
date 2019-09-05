@@ -23,9 +23,6 @@ typedef enum
     eTheme,
 }FormFieldType;
 
-//static NSString *kMerchantChecksumGenURL = @"https://125.63.68.107/merchant-chksum/ChecksumGenerator";
-//static NSString *kMerchantChecksumValURL = @"https://125.63.68.107/merchant-chksum/ValidateChksum";
-
 static NSString *kMerchantChecksumGenURL = @"https://pguat.paytm.com/paytmchecksum/paytmCheckSumGenerator.jsp";
 static NSString *kMerchantChecksumValURL = @"https://pguat.paytm.com/paytmchecksum/paytmCheckSumVerify.jsp";
 
@@ -68,8 +65,8 @@ static NSString *kMerchantChecksumValURL = @"https://pguat.paytm.com/paytmchecks
     self.orderIDField.text = [ViewController generateOrderIDWithPrefix:@"ORDER"];
     self.customerIDTextField.text = @"CUSTOMER123";
     self.transactionAmountTextField.text = @"1"; //reset amount to 1 for safety
-    self.custeMailTextField.text = @"customer123@paytm.com";
-    self.custMobileNoTextField.text = @"9343999888";
+    self.custeMailTextField.text = @"customer123@xyz.com";
+    self.custMobileNoTextField.text = @"9876543210";
 }
 
 - (void)setDefaultMerchantParamsAndFields
@@ -83,7 +80,6 @@ static NSString *kMerchantChecksumValURL = @"https://pguat.paytm.com/paytmchecks
     
     //set the merchant params
     merchant.merchantID = @"WorldP64425807474247"; //STAGING MID
-    //merchant.merchantID = @"robote84198990953406"; //PRODUCTION MID
     merchant.website = @"worldpressplg";
     merchant.industryID = @"Retail";
     merchant.checksumGenerationURL = kMerchantChecksumGenURL;
