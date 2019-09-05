@@ -23,8 +23,8 @@ typedef enum
     eTheme,
 }FormFieldType;
 
-static NSString *kMerchantChecksumGenURL = @"https://pguat.paytm.com/paytmchecksum/paytmCheckSumGenerator.jsp";
-static NSString *kMerchantChecksumValURL = @"https://pguat.paytm.com/paytmchecksum/paytmCheckSumVerify.jsp";
+static NSString *kMerchantChecksumGenURL = @"CheckSumGenerationurl";
+static NSString *kMerchantChecksumValURL = @"CheckSumValidationurl";
 
 @interface ViewController ()
 - (void)setKeyboardNotifications:(BOOL)shouldRegister;
