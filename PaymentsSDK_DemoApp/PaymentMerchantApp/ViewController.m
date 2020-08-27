@@ -76,7 +76,7 @@ static NSString *kMerchantChecksumValURL = @"CheckSumValidationurl";
 
     PGMerchantConfiguration *merchant = [PGMerchantConfiguration defaultConfiguration];
     merchant.clientSSLCertPath = certPath;
-    merchant.clientSSLCertPassword = @""; //TODO : add client passcode
+    merchant.clientSSLCertPassword = @"admin";
     
     //set the merchant params
     merchant.merchantID = @"WorldP64425807474247"; //STAGING MID
