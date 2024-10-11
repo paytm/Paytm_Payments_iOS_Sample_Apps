@@ -51,49 +51,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let url = URLContexts.first?.url else {
             return
         }
-        let dict = self.separateDeeplinkParamsIn(url: url.absoluteString, byRemovingParams: nil)
+        let dict = CommonUtility.separateDeeplinkParamsIn(url: url.absoluteString, byRemovingParams: nil)
         if url.scheme == "paytmmp" {
-            if let viewController = window?.rootViewController as? ViewController {
-                if let extSerialNo = dict["tr"] {
-                    viewController.handleDeepLinkParams(extSerialNo: extSerialNo, url: url.absoluteString)
+            if let viewController = window?.rootViewController as? ModeSelectionViewController {
+                if let extSerialNo = dict["tr"], let amount = dict["am"] {
+                    viewController.extSerialNo = extSerialNo
+                    viewController.amount = amount
+                    viewController.url = url.absoluteString
+                    viewController.isDeeplinkForIntentApp = true
                 }
             }
         }
     }
-    
-    func separateDeeplinkParamsIn(url: String?, byRemovingParams rparams: [String]?)  -> [String: String] {
-        guard let url = url else {
-            return [String : String]()
-        }
-        
-        /// This url gets mutated until the end. The approach is working fine in current scenario. May need a revisit.
-        var urlString = stringByRemovingDeeplinkSymbolsIn(url: url)
-        
-        var paramList = [String : String]()
-        let pList = urlString.components(separatedBy: CharacterSet.init(charactersIn: "&?"))
-        for keyvaluePair in pList {
-            let info = keyvaluePair.components(separatedBy: CharacterSet.init(charactersIn: "="))
-            if let fst = info.first , let lst = info.last, info.count == 2 {
-                paramList[fst] = lst.removingPercentEncoding
-                if let rparams = rparams, rparams.contains(info.first!) {
-                    urlString = urlString.replacingOccurrences(of: keyvaluePair + "&", with: "")
-                    //Please dont interchage the order
-                    urlString = urlString.replacingOccurrences(of: keyvaluePair, with: "")
-                }
-            }
-        }
-        return paramList
-    }
-    
-    func  stringByRemovingDeeplinkSymbolsIn(url: String) -> String {
-        var urlString = url.replacingOccurrences(of: "$", with: "&")
-        
-        /// This may need a revisit. This is doing more than just removing the deeplink symbol.
-        if let range = urlString.range(of: "&"), urlString.contains("?") == false{
-            urlString = urlString.replacingCharacters(in: range, with: "?")
-        }
-        return urlString
-    }
-
 }
 
