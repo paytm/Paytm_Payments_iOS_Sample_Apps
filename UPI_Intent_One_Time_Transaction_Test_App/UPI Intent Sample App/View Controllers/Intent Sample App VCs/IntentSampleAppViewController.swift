@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class IntentSampleAppViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Outlets
     
@@ -29,12 +29,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var failureReasonBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: Variables
+    
     var externalSerialNumber: String?
     var deepLinkUrl: String?
+    var amount: String?
     
     var errorDict = [String]()
     var selectedError = ""
     var isDropdownVisible = false
+    
+    //MARK: Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +54,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isHidden = true
-        tableView.register(UINib(nibName: "dropDownTableViewCell", bundle:  Bundle(for: ViewController.self)), forCellReuseIdentifier: "dropDownTableViewCell")
+        tableView.register(UINib(nibName: "DropDownTableViewCell", bundle:  Bundle(for: IntentSampleAppViewController.self)), forCellReuseIdentifier: "DropDownTableViewCell")
         failureReasonBtn.isEnabled = false
         initialiseErrorDict()
     }
@@ -68,9 +73,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func handleDeepLinkParams(extSerialNo: String?, url: String?) {
+    func handleDeepLinkParams(extSerialNo: String?, url: String?, amount: String?) {
         self.externalSerialNumber = extSerialNo
         self.deepLinkUrl = url
+        self.amount = amount
     }
     
     func createParamsForTransaction(transactionType: String, jwtToken: String) -> [String:Any] {
@@ -89,7 +95,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 "mobileNumber": "7777777777",
                 "txnStatus": transactionType,
                 "bankRRN": "123456",
-                "amount": "1",
                 "settlementType": "DEFERRED_SETTLEMENT"
             ]
         ]
@@ -107,6 +112,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let externalSerialNumber = externalSerialNumber{
                 body["externalSerialNo"] = externalSerialNumber
             }
+            
+            if let amount = amount {
+                body["amount"] = amount
+            }
             bodyParams["body"] = body
         }
         
@@ -119,7 +128,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 "channelCode": "PGPTM",
                 "txnStatus": transactionType,
                 "bankRRN": "123456",
-                "amount": "1",
                 "iss": "ts"
         ]
         
@@ -133,6 +141,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if let externalSerialNumber = externalSerialNumber {
             payload["externalSerialNo"] = externalSerialNumber
+        }
+        
+        if let amount = amount {
+            payload["amount"] = amount
         }
         
         return payload
@@ -168,7 +180,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dropDownTableViewCell", for: indexPath) as! dropDownTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DropDownTableViewCell", for: indexPath) as! DropDownTableViewCell
         cell.configureCell(label: self.errorDict[indexPath.row])
         return cell
     }

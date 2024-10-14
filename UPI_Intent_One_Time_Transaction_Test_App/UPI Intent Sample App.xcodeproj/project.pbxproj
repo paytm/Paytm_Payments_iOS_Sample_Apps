@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75A9DF3B2B8F22B7005AC0EA /* dropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A9DF392B8F22B7005AC0EA /* dropDownTableViewCell.swift */; };
-		75A9DF3C2B8F22B7005AC0EA /* dropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A9DF3A2B8F22B7005AC0EA /* dropDownTableViewCell.xib */; };
+		75329A462CB3B6CF007A0587 /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75329A452CB3B6CF007A0587 /* ModeSelectionViewController.swift */; };
+		7536ED792CAA8E920003EE8B /* SubmitPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536ED782CAA8E920003EE8B /* SubmitPageViewController.swift */; };
+		7536ED7B2CAAB4C20003EE8B /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536ED7A2CAAB4C20003EE8B /* TransactionDetailViewController.swift */; };
+		75A363BD2CA6D0EE00209244 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A363BC2CA6D0EE00209244 /* QRScannerViewController.swift */; };
+		75A9DF3B2B8F22B7005AC0EA /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A9DF392B8F22B7005AC0EA /* DropDownTableViewCell.swift */; };
+		75A9DF3C2B8F22B7005AC0EA /* DropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A9DF3A2B8F22B7005AC0EA /* DropDownTableViewCell.xib */; };
 		75DC20BF2ADD4E770060EA86 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DC20BE2ADD4E770060EA86 /* Utilities.swift */; };
 		75E7D0032AB9A4FE006CF919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7D0022AB9A4FE006CF919 /* AppDelegate.swift */; };
 		75E7D0052AB9A4FE006CF919 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7D0042AB9A4FE006CF919 /* SceneDelegate.swift */; };
-		75E7D0072AB9A4FE006CF919 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7D0062AB9A4FE006CF919 /* ViewController.swift */; };
+		75E7D0072AB9A4FE006CF919 /* IntentSampleAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7D0062AB9A4FE006CF919 /* IntentSampleAppViewController.swift */; };
 		75E7D00A2AB9A4FE006CF919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E7D0082AB9A4FE006CF919 /* Main.storyboard */; };
 		75E7D00C2AB9A500006CF919 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E7D00B2AB9A500006CF919 /* Assets.xcassets */; };
 		75E7D00F2AB9A500006CF919 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E7D00D2AB9A500006CF919 /* LaunchScreen.storyboard */; };
@@ -39,13 +43,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		75A9DF392B8F22B7005AC0EA /* dropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownTableViewCell.swift; sourceTree = "<group>"; };
-		75A9DF3A2B8F22B7005AC0EA /* dropDownTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dropDownTableViewCell.xib; sourceTree = "<group>"; };
+		75329A452CB3B6CF007A0587 /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
+		7536ED782CAA8E920003EE8B /* SubmitPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitPageViewController.swift; sourceTree = "<group>"; };
+		7536ED7A2CAAB4C20003EE8B /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
+		75A363BC2CA6D0EE00209244 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		75A9DF392B8F22B7005AC0EA /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
+		75A9DF3A2B8F22B7005AC0EA /* DropDownTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownTableViewCell.xib; sourceTree = "<group>"; };
 		75DC20BE2ADD4E770060EA86 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		75E7CFFF2AB9A4FE006CF919 /* UPI Intent Sample App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UPI Intent Sample App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E7D0022AB9A4FE006CF919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75E7D0042AB9A4FE006CF919 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		75E7D0062AB9A4FE006CF919 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		75E7D0062AB9A4FE006CF919 /* IntentSampleAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentSampleAppViewController.swift; sourceTree = "<group>"; };
 		75E7D0092AB9A4FE006CF919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75E7D00B2AB9A500006CF919 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75E7D00E2AB9A500006CF919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +90,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75D8C2722CB8037B004D1782 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				75329A452CB3B6CF007A0587 /* ModeSelectionViewController.swift */,
+				75D8C2742CB80437004D1782 /* Intent Sample App VCs */,
+				75D8C2752CB80449004D1782 /* QR Scan Sample App VCs */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		75D8C2732CB803C9004D1782 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				75A9DF392B8F22B7005AC0EA /* DropDownTableViewCell.swift */,
+				75A9DF3A2B8F22B7005AC0EA /* DropDownTableViewCell.xib */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		75D8C2742CB80437004D1782 /* Intent Sample App VCs */ = {
+			isa = PBXGroup;
+			children = (
+				75E7D0062AB9A4FE006CF919 /* IntentSampleAppViewController.swift */,
+			);
+			path = "Intent Sample App VCs";
+			sourceTree = "<group>";
+		};
+		75D8C2752CB80449004D1782 /* QR Scan Sample App VCs */ = {
+			isa = PBXGroup;
+			children = (
+				75A363BC2CA6D0EE00209244 /* QRScannerViewController.swift */,
+				7536ED782CAA8E920003EE8B /* SubmitPageViewController.swift */,
+				7536ED7A2CAAB4C20003EE8B /* TransactionDetailViewController.swift */,
+			);
+			path = "QR Scan Sample App VCs";
+			sourceTree = "<group>";
+		};
 		75E7CFF62AB9A4FE006CF919 = {
 			isa = PBXGroup;
 			children = (
@@ -107,14 +152,13 @@
 			children = (
 				75E7D0022AB9A4FE006CF919 /* AppDelegate.swift */,
 				75E7D0042AB9A4FE006CF919 /* SceneDelegate.swift */,
-				75E7D0062AB9A4FE006CF919 /* ViewController.swift */,
 				75E7D0082AB9A4FE006CF919 /* Main.storyboard */,
 				75E7D00B2AB9A500006CF919 /* Assets.xcassets */,
 				75E7D00D2AB9A500006CF919 /* LaunchScreen.storyboard */,
 				75E7D0102AB9A500006CF919 /* Info.plist */,
+				75D8C2722CB8037B004D1782 /* View Controllers */,
+				75D8C2732CB803C9004D1782 /* Table View Cells */,
 				75DC20BE2ADD4E770060EA86 /* Utilities.swift */,
-				75A9DF392B8F22B7005AC0EA /* dropDownTableViewCell.swift */,
-				75A9DF3A2B8F22B7005AC0EA /* dropDownTableViewCell.xib */,
 			);
 			path = "UPI Intent Sample App";
 			sourceTree = "<group>";
@@ -242,7 +286,7 @@
 			files = (
 				75E7D00F2AB9A500006CF919 /* LaunchScreen.storyboard in Resources */,
 				75E7D00C2AB9A500006CF919 /* Assets.xcassets in Resources */,
-				75A9DF3C2B8F22B7005AC0EA /* dropDownTableViewCell.xib in Resources */,
+				75A9DF3C2B8F22B7005AC0EA /* DropDownTableViewCell.xib in Resources */,
 				75E7D00A2AB9A4FE006CF919 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,11 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E7D0072AB9A4FE006CF919 /* ViewController.swift in Sources */,
+				7536ED7B2CAAB4C20003EE8B /* TransactionDetailViewController.swift in Sources */,
+				75E7D0072AB9A4FE006CF919 /* IntentSampleAppViewController.swift in Sources */,
 				75E7D0032AB9A4FE006CF919 /* AppDelegate.swift in Sources */,
-				75A9DF3B2B8F22B7005AC0EA /* dropDownTableViewCell.swift in Sources */,
+				75A363BD2CA6D0EE00209244 /* QRScannerViewController.swift in Sources */,
+				75A9DF3B2B8F22B7005AC0EA /* DropDownTableViewCell.swift in Sources */,
+				75329A462CB3B6CF007A0587 /* ModeSelectionViewController.swift in Sources */,
 				75DC20BF2ADD4E770060EA86 /* Utilities.swift in Sources */,
 				75E7D0052AB9A4FE006CF919 /* SceneDelegate.swift in Sources */,
+				7536ED792CAA8E920003EE8B /* SubmitPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

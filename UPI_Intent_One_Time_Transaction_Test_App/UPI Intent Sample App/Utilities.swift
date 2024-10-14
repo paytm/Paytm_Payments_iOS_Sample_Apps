@@ -7,6 +7,7 @@
 
 import Foundation
 import CommonCrypto
+import UIKit
 
 enum CryptoAlgorithm {
     case MD5, SHA1, SHA224, SHA256, SHA384, SHA512
@@ -40,15 +41,10 @@ enum CryptoAlgorithm {
 
 class UPIIntentSampleAppUtilities {
     
-    public class func getJWTToken(payload: [String:Any], clientSecret: String) -> String {
+    static func getJWTToken(payload: [String:Any], clientSecret: String) -> String {
         let hdrFlds = ["alg":"HS256","typ":"JWT"]
         let jsonHdr = hdrFlds.json
         let tokenHeader = jsonHdr.toBase64URL()
-        
-//        var payloadField: [String : Any] = [:]  //assign value here of payload
-//        payloadField["client-id"] = clientId
-//        payloadField["iss"] = "bos"
-//        payloadField["customer_id"] = JRNPAuthWrapper.getUserID()
         
         let jsonPayload = payload.json
         
@@ -61,6 +57,52 @@ class UPIIntentSampleAppUtilities {
         let joinedkeys = tokenHeader + "." + tokenPayload  + "." + signature
         
         return joinedkeys
+    }
+    
+}
+
+class CommonUtility {
+    
+    static func separateDeeplinkParamsIn(url: String?, byRemovingParams rparams: [String]?)  -> [String: String] {
+        guard let url = url else {
+            return [String : String]()
+        }
+        
+        /// This url gets mutated until the end. The approach is working fine in current scenario. May need a revisit.
+        var urlString = stringByRemovingDeeplinkSymbolsIn(url: url)
+        
+        var paramList = [String : String]()
+        let pList = urlString.components(separatedBy: CharacterSet.init(charactersIn: "&?"))
+        for keyvaluePair in pList {
+            let info = keyvaluePair.components(separatedBy: CharacterSet.init(charactersIn: "="))
+            if let fst = info.first , let lst = info.last, info.count == 2 {
+                paramList[fst] = lst.removingPercentEncoding
+                if let rparams = rparams, rparams.contains(info.first!) {
+                    urlString = urlString.replacingOccurrences(of: keyvaluePair + "&", with: "")
+                    //Please dont interchage the order
+                    urlString = urlString.replacingOccurrences(of: keyvaluePair, with: "")
+                }
+            }
+        }
+        return paramList
+    }
+    
+    static func stringByRemovingDeeplinkSymbolsIn(url: String) -> String {
+        var urlString = url.replacingOccurrences(of: "$", with: "&")
+        
+        if let range = urlString.range(of: "&"), urlString.contains("?") == false{
+            urlString = urlString.replacingCharacters(in: range, with: "?")
+        }
+        return urlString
+    }
+    
+    static func showBasicAlert(on viewController: UIViewController, title: String, message: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay",
+                                      style: .default))
+        viewController.present(alert, animated: true)
     }
     
 }
