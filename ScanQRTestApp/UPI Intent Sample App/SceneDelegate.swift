@@ -53,12 +53,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         let dict = CommonUtility.separateDeeplinkParamsIn(url: url.absoluteString, byRemovingParams: nil)
         if url.scheme == "paytmmp" {
-            if let viewController = window?.rootViewController as? ModeSelectionViewController {
-                if let extSerialNo = dict["tr"], let amount = dict["am"] {
-                    viewController.extSerialNo = extSerialNo
-                    viewController.amount = amount
-                    viewController.url = url.absoluteString
-                    viewController.isDeeplinkForIntentApp = true
+            if let navigationController = window?.rootViewController as? UINavigationController {
+                if let viewController = navigationController.viewControllers.first as? ModeSelectionViewController {
+                    if let extSerialNo = dict["tr"], let amount = dict["am"] {
+                        viewController.updateVariablesForIntentSampleAppInvoke(extSerialNo: extSerialNo, amount: amount, url: url.absoluteString)
+                    }
                 }
             }
         }

@@ -13,6 +13,12 @@ class ModeSelectionViewController: UIViewController {
 
     @IBOutlet weak var intentSampleAppBtn: UIButton!
     
+    @IBOutlet weak var qrScanSampleAppBtn: UIButton! {
+        didSet {
+            qrScanSampleAppBtn.layer.cornerRadius = 8
+        }
+    }
+    
     //MARK: Constants
     
     var extSerialNo: String = ""
@@ -24,9 +30,15 @@ class ModeSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let isDeeplinkForIntentApp = isDeeplinkForIntentApp, isDeeplinkForIntentApp {
-            intentSampleAppBtn.sendActions(for: .touchUpInside)
-        }
+    }
+    
+    //MARK: Intent Sample App Params Update Method
+    
+    func updateVariablesForIntentSampleAppInvoke(extSerialNo: String, amount: String, url: String) {
+        self.extSerialNo = extSerialNo
+        self.amount = amount
+        self.url = url
+        intentSampleAppBtn.sendActions(for: .touchUpInside)
     }
     
     //MARK: IBAction Outlets

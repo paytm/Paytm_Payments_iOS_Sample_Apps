@@ -221,6 +221,7 @@
                     <navigationItem key="navigationItem" id="1b7-eZ-7gJ"/>
                     <connections>
                         <outlet property="intentSampleAppBtn" destination="BAP-8y-cuz" id="yCc-rU-ofJ"/>
+                        <outlet property="qrScanSampleAppBtn" destination="e1V-MA-Lo9" id="T0w-vt-zDX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPQ-VM-niV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
